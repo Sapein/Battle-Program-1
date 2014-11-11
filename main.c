@@ -68,7 +68,7 @@ int main(){
 					printf("You Win! Summoning next Monster!\n"); 
 				}
 			}
-			else if(strcmp(playerInput, "exit\n") == 0){
+			else if(strcmp(playerInput, "2\n") == 0 || strcmp(playerInput, "exit\n") || strcmp(playerInput, "Exit\n") == 0 || strcmp(playerInput, "ext\n") == 0 || strcmp(playerInput, "Ext\n") == 0){
 				battleOn = 0;
 				gameOn = 0; 
 			}
@@ -79,5 +79,3 @@ int main(){
 	}
 	return 0;
 }
-
-
