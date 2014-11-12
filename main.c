@@ -20,6 +20,7 @@
  * =====================================================================================
  */
 int main(){
+	//These are the variables, gameOn and battleOn are Psuedo-Booleans as 1 is True and 0 is False. Others are stats, names, formulas or input.
 	int x; 
 	int playerHP, playerDef, playerAtk;
 	int enemyHP, enemyDef, enemyAtk;
@@ -29,10 +30,22 @@ int main(){
 
 	gameOn = 1;	
 	while(gameOn == 1){
+		
+		//Sets the value for Player's Stats
+		playerHP = 10;
+		playerDef = 0;
+		playerAtk = 3;
+
+		/* sets the value for the enemy's stats */
+		enemyHP = 5;
+		enemyDef = 0;
+		enemyAtk = 0;
+
 		printf("BattleArena v1.0 alpha  ----- Sapein\n");
 		printf("Welcome to the Battle Arena!\n");
 		printf("Please insert your name to get started\n"); 
 		fgets(playerName, 200, stdin);
+		//This mainly clears the name of the newline marking
 		for(x = 0; x <= sizeof(playerName); x++){
 			if(playerName[x] == '\n'){
 				playerName[x] = '\0';
@@ -42,6 +55,7 @@ int main(){
 		printf("Beggining Game...\n");
 		enemyDamage = enemyHP - playerAtk;
 		battleOn = 1;
+		/* The game begins */
 		while(battleOn == 1){
 			char playerInput[40];
 			playerInput == ""; 
@@ -60,6 +74,7 @@ int main(){
 				}
 			}
 			fgets(playerInput, 40, stdin);
+			/* Down below simply checks user-input and sees if it machtes the predetermined inputs */
 			if(strcmp(playerInput, "1\n") == 0 || strcmp(playerInput, "Attk\n") == 0 || strcmp(playerInput, "Attack\n") == 0 || strcmp(playerInput, "attack\n") == 0 || strcmp(playerInput, "atk\n") == 0 || strcmp(playerInput, "atk\n") == 0 || strcmp(playerInput, "Atk\n") == 0){ 
 				enemyHP = enemyDamage;
 				printf("You attacked the Enemy!\n");
